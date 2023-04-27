@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer {
+  *::before,
+  *::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+    background: black;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgb(214, 214, 91);
+    border-radius: 50px;
+  }
+  *::-webkit-scrollbar-button {
+    background: rgb(214, 214, 91);
+    height: 10px;
+    border-radius: 50px;
+  }
+
+  //Detail Page scroll Bar
+
+  body {
+    scroll-behavior: smooth;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../assets/fonts/Raleway-Light.ttf");
+  }
+  @font-face {
+    font-family: "Bebas";
+    src: url("../assets/fonts/BebasNeue-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Archivo";
+    src: url("../assets/fonts/ArchivoBlack-Regular.ttf");
+  }
+  @font-face {
+    font-family: "OpenSauce";
+    src: url("../assets/fonts/OpenSauceOne-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Spartan";
+    src: url("../assets/fonts/LeagueSpartan-Bold.otf");
+  }
+  @font-face {
+    font-family: "Glacial";
+    src: url("../assets/fonts/GlacialIndifference-Bold.otf");
+  }
+  @font-face {
+    font-family: "Random";
+    src: url("../assets/fonts/DTRandomDisplay-Regular.otf");
+  }
+  @font-face {
+    font-family: "Reey";
+    src: url("../assets/fonts/Reey-Regular.otf");
+  }
+  @font-face {
+    font-family: "PublicSans";
+    src: url("../assets/fonts/PublicSans-Bold.ttf");
+  }
+  @font-face {
+    font-family: "BodoniModa";
+    src: url("../assets/fonts/BodoniModa_9pt-Black.ttf");
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+  #App {
+    background: rgba(0, 0, 0, 0.938);
+    backdrop-filter: blur(150px);
+  }
+  #App:before {
+    width: 100%;
+    height: 100%;
+    background: url("../assets//PNG/bg/bgArtwork.png");
+    z-index: -1;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+  }
+  #NavBarStickyMenu {
+    position: -webkit-sticky;
+  }
+  /* Body Scroll */
+  .noScroll {
+    overflow-y: hidden;
+  }
+  .allowScroll {
+    overflow-y: initial;
+  }
+  /* classes */
+  .CardgradientBG {
+    background: url("../assets/PNG/bg/gradientColor.png");
+    background-size: 100% 100%;
+  }
+  @layer {
+    .morphism {
+      box-shadow: 0 0 32px -25px white !important;
+      backdrop-filter: blur(130px) !important;
+      border: solid 1px transparent !important;
+      box-sizing: border-box;
+      background-size: 100% 100% !important;
+      overflow : hidden ; 
+      z-index : 10 ; 
+      transition: border 120ms, backdrop-filter 100ms,
+        background 100ms ease-in-out !important;
+      &:hover {
+        background-size: 130% 130% !important;
+        border: solid 1px white !important;
+        transition: backdrop-filter 500ms, background 500ms ease-in-out !important;
+      }
+      &:focus {
+        background: rgba(255, 255, 255, 0.233) !important;
+        backdrop-filter: blur(20px) !important;
+      }
+      &:valid {
+        border: solid 1px rgb(130, 231, 130);
+      }
+      &:invalid {
+        border: solid 1px rgb(8, 144, 255);
+      }
+      
+    }
+    .isSaved {
+      position: absolute;
+      width: 350px;
+      height: 50%;
+      filter: blur(50px);
+      border: solid white 10px;
+      opacity : 0.5 ; 
+      background: linear-gradient(
+        130deg,
+        rgba(140, 228, 140),
+        rgba(0, 128, 0),
+        rgb(48, 219, 120) 
+      );
+      pointer-events: none;
+      transition : all 250ms ease-in-out ;
+    }
+    .TransactionsButton {
+      position: relative;
+      overflow: hidden;
+      transition: background 200ms ease-in-out;
+      &:before {
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 32px -25px white !important;
+        backdrop-filter: blur(1px) !important;
+        -webkit-backdrop-filter: blur(13px) !important;
+        background: rgba(255, 255, 255, 0.514) !important;
+        transform-origin: center;
+        clip-path: circle(at 50% 0);
+      }
+    }
+    
+    //Sending Status
+    .isSending {
+      &:after {
+        background: linear-gradient(
+          90deg,
+          rgba(60, 147, 228, 0.705),
+          rgba(46, 58, 218, 0.548),
+          rgba(91, 91, 209, 0.582)
+        );
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-position: center center;
+        left: 0;
+        top: 0;
+        background-size: 100% 100%;
+        filter: blur(25px);
+        animation: isSendingAnimation 7000ms alternate infinite;
+        @keyframes isSendingAnimation {
+          from {
+            background-size: 550% 550%;
+            background-position: 0% 0%;
+          }
+          to {
+            background-size: 100% 100%;
+            background-position: 50% 50%;
+          }
+        }
+      }
+    }
+    .Sent {
+      &:after {
+        background: linear-gradient(
+          90deg,
+          rgba(131, 224, 131, 0.589),
+          rgba(98, 143, 98, 0.664) 1,
+          107,
+          71
+        );
+        clip-path: circle(0%, at 50%);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-position: center center;
+        left: 0;
+        top: 0;
+        background-size: 100% 100%;
+        filter: blur(25px);
+        animation: SentAnimation 7000ms linear forwards ease-in-out;
+        @keyframes SentAnimation {
+          from {
+            clip-path: circle(0%, at 50%);
+          }
+          to {
+            clip-path: circle(100%, at 50%);
+          }
+        }
+      }
+    }
+    .Failed {
+      &:after {
+        &:after {
+          background: linear-gradient(
+            90deg,
+            rgba(228, 62, 84, 0.589),
+            rgba(255, 71, 71, 0.664) 1,
+            107,
+            71
+          );
+          clip-path: circle(0%, at 50%);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-position: center center;
+          left: 0;
+          top: 0;
+          background-size: 100% 100%;
+          filter: blur(25px);
+          animation: isSendingAnimation 1000ms ease-in-out;
+          @keyframes Failed {
+            from {
+              clip-path: circle(0%, at 50%);
+            }
+            to {
+              clip-path: circle(100%, at 50%);
+            }
+          }
+        }
+      }
+    }
+  }
+  /* .InputBg {
+    background: linear-gradient(
+      280deg,
+      rgba(79, 46, 243, 0.034),
+      rgba(254, 253, 255, 0.027),
+      rgba(254, 253, 255, 0.021)
+    );
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(247, 169, 169, 0.1);
+    backdrop-filter: blur(110.3px);
+    -webkit-backdrop-filter: blur(11.3px);
+  } */
+
+  .pricesWidget {
+    background: rgba(255, 255, 255, 0.829) !important;
+    border-radius: 50%;
+    position: absolute !important ;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(13.7px) !important;
+    -webkit-backdrop-filter: blur(13.7px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.39) !important;
+    transition: width 450ms,
+      border-radius 450ms 500ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+    overflow: hidden;
+    &:hover {
+      width: 180px !important;
+      min-height: 100px;
+      transition: width 450ms,
+        border-radius 450ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+      border-radius: 15px !important;
+      padding: 5px 0;
+    }
+  }
+  .learnBefore {
+    position: relative;
+    background: yellow !important;
+    &:before {
+      height: 100px !important ;
+      width: 2.3px !important;
+      background: blue !important ;
+    }
+  }
+  .show {
+    transition: transform 0.5s, opacity 1000ms ease-in-out !important;
+    transform: translateY(0);
+  }
+  .hide {
+    transition: transform 0.5s, opacity 1000ms ease-in-out !important;
+    transform: translateY(-100%);
+  }
+
+  .Easing {
+    transition: translate 1000ms ease-in;
+  }
+  .blur {
+    backdrop-filter: blur(150px) !important;
+    background: red !important;
+  }
+
+  .GridBoxs {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(80px, 190px)) !important;
+    grid-template-rows: repeat(8, 52px) !important;
+    grid-gap: 2px;
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fit, minmax(70px, 180px)) !important;
+    }
+
+    .box {
+      align-self: stretch;
+      grid-row: span 4;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: red !important;
+      margin: 1.8px;
+      -ms-overflow-style: none;
+      transition: scale 200ms ease-in-out;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .Expend {
+      grid-column: span 2;
+    }
+    .ExtendDown {
+      grid-row: span 6;
+    }
+    .ShrinkDown {
+      grid-row: span 2;
+    }
+  }
+
+  .BeforeText {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:before {
+      height: 70px !important;
+      width: 7px !important;
+      background: blue !important;
+      left: -15px !important;
+    }
+  }
+  .maskImage {
+    -webkit-mask-image: url("../assets/mask/TicketMask.png");
+    mask-image: url("../assets/mask/TicketMask.png");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 170% 170%;
+  }
+}
