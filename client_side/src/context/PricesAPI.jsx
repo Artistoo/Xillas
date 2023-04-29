@@ -1,20 +1,3 @@
-import React from "react";
-import axios from "axios";
-export const PricesContext = React.createContext();
-
-export default function PricesAPI({ children }) {
-  const [Prices, setPrices] = React.useState();
-  axios
-    .get("https://data.messari.io/api/v1/assets", {
-      headers: {
-        "x-messari-api-key": import.meta.env.VITE_MESSARI_KEY,
-      },
-    })
-    .then((res) => setPrices((current) => (current = res.data)))
-    .catch((err) => console.log(err));
-  return (
-    <PricesContext.Provider value={{ Prices }}>
-      {children}
-    </PricesContext.Provider>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d7c3781a96e5d978d3dbae5f136c379a54a695a31751f2ce3bc46422967ef466
+size 582
