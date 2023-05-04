@@ -1,21 +1,3 @@
-import React from "react";
-import Pages from "../PageExport";
-import Header from "./header";
-import Services from "./Services";
-import Transaction from "./transaction";
-import  History from './History'
-import Learn from "./Learn";
-import Donate from '../../components/Donate'
-import '../../styling/index.css'
-export default function home() {
-  return (
-    <>
-      <Header />
-      <Services />
-      <Transaction />
-      <History />
-      <Learn />
-      <Donate />
-    </>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2d9f39e0d225c9a30f6704adfc2a67d6954c9b0ed3db42e8b4e508e7c17cac54
+size 441

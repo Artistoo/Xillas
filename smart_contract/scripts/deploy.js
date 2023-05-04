@@ -1,23 +1,3 @@
-const main = async () => {
-  const Transactions = await hre.ethers.getContractFactory("Transactions");
-
-  const transaction = await Transactions.deploy();
-  await transaction.deployed();
-
-  console.log(`Transactions Deployed to : `, transaction.address);
-};
-
-const runMain = async () => {
-  try {
-    await main();
-    process.exit(0);
-  } catch (err) {
-    console.log(
-      err instanceof String &&
-        err + " the main function in the deploy solidity file returned"
-    );
-    process.exit(1);
-  }
-};
-
-runMain();
+version https://git-lfs.github.com/spec/v1
+oid sha256:670a612eeda53f13bbb248c7811989987900b4fd6c29fad621fa637b0601ca64
+size 521

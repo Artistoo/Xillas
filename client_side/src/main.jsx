@@ -1,24 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./styling/index.css";
-import { BrowserRouter } from "react-router-dom";
-import { TransactionProivder } from "./context/TransactionContext";
-import PricesAPI from "./context/PricesAPI";
-import ErrorProvider from "./context/ErrorContext";
-import FooterNavigate from "./context/FooterNavigate";
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <ErrorProvider>
-    <FooterNavigate>
-      <TransactionProivder>
-        <PricesAPI>
-          <BrowserRouter>
-            <React.StrictMode>
-              <App />
-            </React.StrictMode>
-          </BrowserRouter>
-        </PricesAPI>
-      </TransactionProivder>
-    </FooterNavigate>
-  </ErrorProvider>
-);
+version https://git-lfs.github.com/spec/v1
+oid sha256:fd60abed31560be6a2354f9da7887b05523a5593df9ab3094f956a4899cae4ac
+size 657
