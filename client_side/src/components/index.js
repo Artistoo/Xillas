@@ -1,9 +1,3 @@
-export { default as Welcome } from "./Welcome";
-export { default as Services } from "./Services";
-export { default as NavBar } from "./NavBar";
-export { default as Loader } from "./Loader";
-export { default as Footer } from "./Footer";
-export { default as Online } from "./online";
-export { default as Error } from "./Error";
-export { default as Ticket } from "./Ticket";
-export { default as Donate } from './Donate'
+version https://git-lfs.github.com/spec/v1
+oid sha256:1b58a8c90d3bbbca6c695e469d93f0b21b6a4582a31aa52654fbc22855832152
+size 378
